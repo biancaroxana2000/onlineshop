@@ -10,10 +10,10 @@
     <p class = "lbl-description">Description: {{element.description}}</p>
     <p class = "lbl-price">Price: {{element.price}}</p>
 <!--<img src = "{{element.imageURL}}"/>-->
-    <img class = "img-item" [src] = "element.imageURL"/>
+    <img class = "img-item" [src] = "element.imageUrl"/>
     <div class = "div-buttons">
-      <button class = "btn-edit" mat-raised-button color="primary" (click)="onEdit()">Edit</button>
-      <button class = "btn-delete" mat-raised-button color="accent" (click)="onDelete()">Delete</button>
+      <button class = "btn-edit" mat-raised-button color="primary" (click)="onEdit(element)">Edit</button>
+      <button class = "btn-delete" mat-raised-button color="accent" (click)="onDelete(element)">Delete</button>
     </div>
 
 

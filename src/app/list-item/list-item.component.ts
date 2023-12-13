@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
+import {ItemService} from "../services/item.service";
 
 @Component({
   selector: 'app-list-item',
@@ -21,28 +22,21 @@ export class ListItemComponent {
   //     this.isVisible = true;
   //   }
   // }
+  @Output() changeData = new EventEmitter<any>();
   itemList : Array <any> = [];
-  constructor() {
-    let item1 = {
-      "title" : "Bicicleta",
-      "description" : "Are 2 roti",
-      "imageURL" : "https://silvis.ro/images/shopproducts/big/bicicleta-silvis-mtb-3x8-viteze-roti-26-premium-silver-56907.png",
-      "price" : "1000 lei"
-    };
-    this.itemList.push(item1);
-    let item2 = {
-      "title" : "Motocicleta",
-      "description" : "Are 2 roti",
-      "imageURL" : "https://i.pinimg.com/564x/82/d0/c1/82d0c14466702ae7fe16510481e4201f.jpg",
-      "price" : "9000 lei"
-    };
-    this.itemList.push(item2);
+  constructor(private itemService : ItemService) {
+   this.itemService.getItems().subscribe((items:Array<any>)=>{
+     this.itemList = items;
+   })
   }
-  onEdit() : void {
+  onEdit(item : any) : void {
+    console.log("S-a apasat onEdit");
+    this.changeData.emit(item); //metoda emit() ne ajuta sa scoatem din componenta obiectul item
 
   }
-  onDelete() : void {
-
+  onDelete(item:any) : void {
+   console.log(item);
+   this.itemService.deleteItem(item.id);
   }
 
 }
