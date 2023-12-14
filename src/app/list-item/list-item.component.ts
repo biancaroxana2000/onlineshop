@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
@@ -23,6 +23,7 @@ export class ListItemComponent {
   //   }
   // }
   @Output() changeData = new EventEmitter<any>();
+  @Input("showAdminControl") showAdminControl : boolean = false;
   itemList : Array <any> = [];
   constructor(private itemService : ItemService) {
    this.itemService.getItems().subscribe((items:Array<any>)=>{
@@ -38,5 +39,7 @@ export class ListItemComponent {
    console.log(item);
    this.itemService.deleteItem(item.id);
   }
+  onBuy(item : any) : void {
 
+  }
 }

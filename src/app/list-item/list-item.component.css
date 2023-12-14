@@ -15,9 +15,11 @@
   height: 100px;
 }
 .card-item {
-  width: 400px;
+  width: 30%;
   margin-top: 16px;
   margin-bottom: 16px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 .div-buttons {
   display: flex;
@@ -26,8 +28,20 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .btn-delete {
   margin-left: auto;
   margin-right: auto;
+}
+
+.btn-buy {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.div-row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
