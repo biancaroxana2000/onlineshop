@@ -1,0 +1,36 @@
+.input-container mat-form-field + mat-form-field {
+  margin-left: 8px;
+}
+.card-container {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20vh;
+  margin-bottom: auto;
+/*  vh reprezinta view height, iar 20 reprezinta 20% */
+/*  vw reprezinta view weight, iar 20 reprezinta 20% */
+}
+.input-field {
+  width : 100%;
+}
+.div-buttons {
+  /*display: flex;*/
+  display: grid;
+}
+.btn-save {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div-page-auth {
+  display: flex;
+}
+
+.div-background-image {
+  color:
+    #fff;
+  height: 100vh;
+  background-image: url("../../assets/background.webp");
+  background-size: 100%;
+  background-size: cover;
+}
